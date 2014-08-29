@@ -1,0 +1,27 @@
+<!--
+ * file - Carousel.html 
+ * desc - View accessed from the Carousel menu.
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+
+<div class="container-fluid" ng-controller="CarouselCtrl">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="carouselDiv">
+                    <carousel interval="carouselInterval">
+                        <slide ng-repeat="carousel in carouselList" active="carousel.active">
+                            <img ng-src="./{{carousel.image_path}}" id="carouselImg">
+                            <div class="carousel-caption">
+                                <h4>{{carousel.title}}</h4>
+                                <p>{{carousel.desc}}</p>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<!--
+ * file - ContactUs.html 
+ * desc - View accessed from the ContactUs menu.
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+
+<div class="container-fluid" ng-controller="ContactUsCtrl" >
+    <div class="jumbotron" id="contactUs">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row form-group">
+                    <div class="col-md-9">
+                        <google-map center="googleMapOptions.center" draggable="true" zoom="googleMapOptions.zoom">
+                        </google-map>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- Address -->
+                        <p>
+                            <span class="contact_us_text_medium">
+                                <b>ADDRESS <br/> </b>
+                                {{address.address_line1}}<br/>
+                                {{address.address_line2}}<br/>
+                                {{address.address_line3}}<br/> 
+                                
+                                 <!-- Display only if Phone Nos are configured -->
+                                 
+                                 <i class="fa fa-phone fa-2" ng-show="address.phone_no1!= '' "></i> {{address.phone_no1}}<br/>
+                                <i class="fa fa-phone fa-2" ng-show="address.phone_no2!= '' "></i>  {{address.phone_no2}}<br/>
+                            </span>
+                        </p>
+                        
+                        <!-- Twitter/FB -->
+                        <p>
+                            <span class="contact_us_text_medium">
+                                <i class="fa fa-twitter fa-2" ng-show="social.twitter_id != '' "></i> {{social.twitter_id}}<br/>
+                                <i class="fa fa-facebook fa-2" ng-show="social.fb_id !='' "></i> {{social.fb_id}}<br/>
+                                <i class="fa fa-google-plus fa-2" ng-show="social.gplus_id!= '' "></i> {{social.gplus_id}}<br/> 
+                            </span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

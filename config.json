@@ -1,0 +1,11 @@
+{
+    "applicationName": "mean-portal",
+    "httpPort":"54321",
+    "clientDirectory":"/ui",
+    "homeScreen":"/ui/index.html",
+    "environment":"dev",
+    "prodDBConnURI":"mongodb://meanbootstrapuser:Log@May2013@ds029960.mongolab.com:29960/meanbootstrap",
+    "devDBConnURI":"mongodb://maxmulleradmin:maxmulleradmin@localhost:27017/maxmuller",
+    "qaDBConnURI":"mongodb://maxmulleradmin:maxmulleradmin@localhost:27017/maxmuller",
+    "host":"local"
+}

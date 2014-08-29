@@ -1,0 +1,20 @@
+<!--
+ * file - Blog.html 
+ * desc - View accessed from the Blog menu.
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+
+<div class="container-fluid" ng-controller="BlogCtrl" >
+    <div class="jumbotron" id="blogs">
+        <!-- Display about us in paragraphs -->
+        <div class="row" ng-repeat="blog in blogList">
+            <div class="col-md-12">
+                <div html-render content-text="{{blog.blog_html}}">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<!--
+ * file - Login.html 
+ * desc - View accessed from the Login menu.
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+
+<div class="container-fluid" ng-controller="LoginCtrl">
+    
+    <div class="jumbotron">    
+        <div class="row form-group">
+            <!-- label -->
+                <label class="col-md-2 control-label">Login Id</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="loginId" placeholder="Enter Login Id" class="k-textbox home_screen_text_medium" ng-model="user.login">
+                </div>
+        </div>
+
+        <div class="row form-group">
+            <!-- label -->
+                <label class="col-md-2 control-label">Password</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="password" id="password" placeholder="Enter Password" class="k-textbox home_screen_text_medium" ng-model="user.password">
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 offset2">
+                <a class="btn btn-primary btn-md" role="button" ng-click="onLogin()">LOGIN</a>
+            </div>
+            <div class="col-md-2 offset2">
+                <a class="btn btn-primary btn-md" role="button" ng-click="onCancel()">CANCEL</a>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,90 @@
+<!--
+ * file - Site_Mgmt_User.html 
+ * desc - View accessed from the Site Management -> User Management -> Users menu.
+ * should be accessible only to superadmin user   
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+
+<div class="container-fluid" ng-controller="SiteMgmtUserCtrl" >
+    <div class="jumbotron" id="siteMgmtUser">  
+        <form id="userAdd" name="userAddForm" class="form-horizontal">
+            
+            <!-- Name -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Name</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="albumName" placeholder="Enter Name" class="k-textbox home_screen_text_medium" ng-model="user.name">
+                </div>
+            </div>
+            
+            <!-- Login ID -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Login Id</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="albumName" placeholder="Enter Login ID" class="k-textbox home_screen_text_medium" ng-model="user.login_id">
+                </div>
+            </div>
+
+             <!-- Password -->
+            <div class="row form-group" ng-hide="isUserUpdate==true">
+                <!-- label -->
+                <label class="col-md-4 control-label">Password</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="albumDesc" placeholder="Enter Password" class="k-textbox home_screen_text_medium" ng-model="user.password">
+                </div>
+            </div>
+             
+            <!-- Email ID -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Email </label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="albumDesc" placeholder="Enter E-Mail" class="k-textbox home_screen_text_medium" ng-model="user.email">
+                </div>
+            </div>
+
+            
+            <!-- Buttons -->
+            <!-- SAVE & RESET buttons -->
+            <div class="row form-group">
+                <!-- SAVE -->
+                <div class="col-md-2 col-md-offset-2" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onUserSave()" ng-disabled="isUserSave==false">SAVE</a>
+                </div>
+
+                <!-- UPDATE -->
+                <div class="col-md-2 col-md-offset-2" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onUserUpdate()" ng-disabled="isUserUpdate==false">UPDATE</a>
+                </div>
+                
+                <!-- RESET -->
+                <div class="col-md-2 col-md-offset-2" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onUserReset()">RESET</a>
+                </div>
+
+            </div>
+        </form>
+        
+        <!-- add a divider -->
+        <div>
+            <hr class="horizontal_divider_one">
+        </div>
+        
+        <!-- User Grid -->
+        <div class="row">
+            <div class="col-md-11 col-md-offset-1">
+                <div ng-grid="userGridOptions" class="mc_grid" style="height:250px;width:100%">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

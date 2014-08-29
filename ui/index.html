@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--
+ * file - index.html
+ * desc - Landing page of the portal
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+<html ng-app="meanBootstrapPortal">
+    <head>
+        <title>MEAN PORTAL</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- JQuery v1.11.0 -->
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <!-- Bootstrap v3.2.0 -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <!-- AngularJS v1.2.3 -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+        <!-- Kendo UI Core -->
+        <script src="http://cdn.kendostatic.com/2014.1.416/js/kendo.ui.core.min.js"></script>
+        <!-- Angular Kendo -->
+        <script src="./js/lib/angular-kendo.min.js"></script>
+        <!-- AngularJS Route -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-route.min.js"></script>
+        <!-- AngularjS UI-Bootstrap -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+        <!-- AngularJS ng-grid -->
+        <script src="./js/lib/ng-grid-2.0.11.min.js"></script>
+        <!-- SummerNote WYSIWYG Editor -->
+        <script src="./js/lib/jquery.hotkeys.js"></script>
+        <script src="./js/lib/summernote.min.js"></script>
+        
+        <!-- AngularUI-Google Map Dependencies-->
+        <script src='http:///maps.googleapis.com/maps/api/js?sensor=false'></script>
+        <script src="./js/lib/lodash.underscore.min.js"></script>
+        <script src="./js/lib/angular-google-maps.min.js"></script>
+        
+        <!-- Client Route File -->
+        <script src="./js/Client_Routes.js"></script>
+        
+        <!-- Initialize AngularJS application -->
+        <script>
+            console.log('index.html#meanBootstrapPortal init...');
+            var meanBootstrapPortal = angular.module('meanBootstrapPortal',['ngRoute','ngGrid','ui.bootstrap','kendo.directives','google-maps']);
+            // ClientRoutes is defined in the js/Client_Routes.js file
+            meanBootstrapPortal.config(ClientRoutes);
+        </script>
+        
+        <!-- MeanBootstrapPortal controllers/services/directives -->
+        
+        <!-- Services -->
+        <script src="./js/services/BlogService.js"></script>
+        <script src="./js/services/GalleryService.js"></script>
+        <script src="./js/services/CarouselService.js"></script>
+        <script src="./js/services/ContactUsService.js"></script>
+        <script src="./js/services/UserService.js"></script>
+        <script src="./js/services/LoginService.js"></script>
+        
+        <!-- Directives -->
+        <script src="./js/directives/TextEditorDirective.js"></script>
+        <script src="./js/directives/HtmlRenderDirective.js"></script>
+        <script src="./js/directives/GalleryDirective.js"></script>
+        
+        <!-- Controllers -->
+        <script src="./js/controllers/BlogCtrl.js"></script>
+        <script src="./js/controllers/SiteMgmtBlogCtrl.js"></script>
+        <script src="./js/controllers/SiteMgmtGalleryCtrl.js"></script>
+        <script src="./js/controllers/GalleryCtrl.js"></script>
+        <script src="./js/controllers/SiteMgmtCarouselCtrl.js"></script>
+        <script src="./js/controllers/CarouselCtrl.js"></script>
+        <script src="./js/controllers/ContactUsCtrl.js"></script>
+        <script src="./js/controllers/SiteMgmtContactUsCtrl.js"></script>
+        <script src="./js/controllers/SiteMgmtUserCtrl.js"></script>
+        <script src="./js/controllers/LoginCtrl.js"></script>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+
+        <!-- Font Awesome 4.1.0 CDN -->
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+
+        <!-- Kendo UI Core -->
+        <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.416/styles/kendo.common-bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.416/styles/kendo.bootstrap.min.css">
+        
+        <!-- Angular ng-grid css-->
+        <link href="./css/lib/ng-grid.css" rel="stylesheet">
+
+        <!-- summer note -->
+        <link href="./css/lib/summernote.css" rel="stylesheet">
+        
+        <!-- Google Web Fonts -->
+        <!-- Header -->
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <!-- Carousel Caption -->
+        <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+        <!-- Navigation Items -->
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+        <!-- Footer -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        
+        <!-- mean bootstrap portal css -->
+        <link href="./css/meanbootstrapportal.css" rel="stylesheet">
+        
+        <!-- Google Web Fonts -->
+        <!-- Header -->
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        
+        <!-- Carousel Caption -->
+        <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+        <!-- Navigation Items -->
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Cinzel:700' rel='stylesheet' type='text/css'>
+
+        <!-- in line style -->
+        <style>
+            .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+            .ta-editor {
+                min-height: 300px;
+                height: auto;
+                overflow: auto;
+                font-family: inherit;
+                font-size: 100%;
+                margin:20px 0;
+            }
+            .angular-google-map-container { height: 400px;width: 90%; }
+        </style>
+        
+        <script>
+            // Call the Home Screen
+            meanBootstrapPortal.run(function($location,$rootScope){
+                console.log("index.html#meanBootstrapPortal#run");
+                $location.path("carousel");
+                $rootScope.userDetails = {
+                    _id:'',
+                    type:'',
+                    name:'',
+                    email:'',
+                    login_id:''
+                };
+                $rootScope.isUserLoggedIn = false;
+            });
+            
+            // Allow access to certain urls only for logged in users
+            meanBootstrapPortal.run(function($rootScope,$location){
+               console.log("index.html#meanBootstrapPortal#run1");
+               // list of all paths that should be accessed only if the user is authenticated
+               var requiresAuthentication = ['/site_mgmt_blogs','/site_mgmt_gallery','/site_mgmt_carousel','/site_mgmt_contactus','/site_mgmt_users','/user_profile'];
+               $rootScope.$on('$routeChangeStart', function(event, newUrl, oldUrl){
+                   console.log(' is User Logged In - ' + $rootScope.isUserLoggedIn + ' Path - ' + $location.path());
+                   var isUserLoggedIn = $rootScope.isUserLoggedIn;
+                   var path = $location.path();
+                   if($.inArray(path, requiresAuthentication) > 0 && isUserLoggedIn==false) {
+                       // Redirect User to login screen
+                       console.log('Redirecting to Login screen....');
+                       $location.path('login');
+                   }
+               }); 
+            });
+            
+        </script>
+    </head>
+    
+    
+    <body>
+        <div class="container-fluid">
+            <!-- Navigation Row -->
+            <div class="row-fluid">
+                <div class="col-md-8 offset-4">
+                    <div class="navbar navbar-default navbar-static-top" role="navigation" id="navigationDiv">
+                        <div class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse">
+                                    <!-- Regular Menu Items -->
+                                    <ul class="nav navbar-nav">
+                                        <li class="active"><a href="carousel">Carousel</a></li>
+                                        <li><a href="blogs">Blogs</a></li>
+                                        <li><a href="gallery">Gallery</a></li>
+                                        <li><a href="contactus">Contact Us</a></li>
+                                    </ul>
+                                    
+                                    <!-- Site Management Menu Items -->
+                                    <ul class="nav navbar-nav navbar-right" ng-show="isUserLoggedIn==true && (userDetails.type=='admin' || userDetails.type=='superadmin') ">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Management<span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li class="dropdown-header">Settings</li>
+                                                <li><a href="site_mgmt_carousel">Carousel</a></li>
+                                                <li><a href="site_mgmt_gallery">Gallery</a></li>
+                                                <li><a href="site_mgmt_blogs">Blogs</a></li>
+                                                <li><a href="site_mgmt_contactus">Contact Us</a></li>
+                                                <li class="dropdown-header">User Management</li>
+                                                <li><a href="site_mgmt_users">Users</a></li>
+                                                
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <!-- Login Button -->
+                                    <ul class="nav navbar-nav navbar-right" ng-show="isUserLoggedIn==false" ng-hide="isUserLoggedIn==true">
+                                        <li><a href="login">Login</a></li>    
+                                    </ul>
+                                    <!-- User Profile -->
+                                    <ul class="nav navbar-nav navbar-right" ng-show="isUserLoggedIn==true" ng-hide="isUserLoggedIn==false">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{userDetails.name}}<span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="user_profile">My Profile</a></li>
+                                                <li><a href="#" ng-click="onLogout()">Logout</a></li> 
+                                            </ul>
+                                        </li>    
+                                    </ul>
+                                </div><!--/.nav-collapse -->
+                            </div><!--/.container-fluid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Body -->
+        <div class="row-fluid">
+            <div class="col-md-8 offset-2">
+                <div class="container">
+                    <div ng-view id="ngViewDiv">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+

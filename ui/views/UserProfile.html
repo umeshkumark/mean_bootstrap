@@ -1,0 +1,39 @@
+<!--
+ * file - User_Profile.html 
+ * desc - View accessed user -> My Profile once the user has successfully logged in ..
+ * should be accessible only to users who have successfully logged in. 
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+<div class="container-fluid" ng-controller="SiteMgmtUserCtrl" >
+    <div class="jumbotron" id="userProfileMgmt">  
+        <form id="editUserProfile" name="editUserProfileForm" class="form-horizontal">
+            
+            <div class="row form-group">
+                
+                <!-- Password  -->
+                <label class="col-md-4 control-label">New Password</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="password" id="password1" placeholder="Enter Password" class="k-textbox home_screen_text_medium" ng-model="userProfile.password1">
+                </div>
+                
+                <!-- Confirm Password -->
+                <label class="col-md-4 control-label">Confirm Password</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="password" id="password2" placeholder="Enter Password" class="k-textbox home_screen_text_medium" ng-model="userProfile.password2">
+                </div>
+            </div>
+            
+            <div class="row ">
+                <!-- Update Password Button -->
+                <!-- RESET -->
+                <div class="col-md-1 col-md-offset-4" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onPasswordUpdate()" ng-disabled="userProfile.password1!=userProfile.password2">UPDATE PASSWORD</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

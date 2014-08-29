@@ -1,0 +1,145 @@
+<!--
+ * file - Site_Mgmt_ContactUs.html 
+ * desc - View accessed from the Site Management -> ContactUs menu.
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+
+<div class="container-fluid" ng-controller="SiteMgmtContactUsCtrl" >
+    <div class="jumbotron" id="siteMgmtContactUs">
+        <form id="carouselAdd" name="carouselAddForm" class="form-horizontal">
+            
+            <!-- Address Details -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Address Line 1</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="addr1" placeholder="Enter Address " class="k-textbox home_screen_text_medium" ng-model="address.address_line1">
+                </div>
+            </div>
+  
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Address Line 2</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="addr2" placeholder="Enter Address " class="k-textbox home_screen_text_medium" ng-model="address.address_line2">
+                </div>
+            </div>
+            
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Address Line 3</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="addr3" placeholder="Enter Address " class="k-textbox home_screen_text_medium" ng-model="address.address_line3">
+                </div>
+            </div>
+            
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Primary Phone No</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="phone1" placeholder="Enter Phone No" class="k-textbox home_screen_text_medium" ng-model="address.phone_no1">
+                </div>
+            </div>
+                
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Secondary Phone No</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="phone2" placeholder="Enter Phone No " class="k-textbox home_screen_text_medium" ng-model="address.phone_no2">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-1 col-md-offset-4" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onSaveAddress()">SAVE</a>
+                </div>
+            </div>
+            
+            <!-- add a divider -->
+            <div>
+                <hr class="horizontal_divider_one">
+            </div>
+            
+            <!-- Google Map Details -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Latitude</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="addr1" placeholder="Enter Latitude " class="k-textbox home_screen_text_medium" ng-model="map.latitude">
+                </div>
+            </div>
+  
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Longitude</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="addr2" placeholder="Enter Longitude " class="k-textbox home_screen_text_medium" ng-model="map.longitude">
+                </div>
+            </div>
+            
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Zoom Level</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="addr3" placeholder="Enter Zoom Level " class="k-textbox home_screen_text_medium" ng-model="map.zoom">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-1 col-md-offset-4" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onSaveMap()">SAVE</a>
+                </div>
+            </div>
+            
+            <div>
+                <hr class="horizontal_divider_one">
+            </div>
+            
+            
+            <!-- Social Account Details -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label"><i class="fa fa-twitter fa-2"></i></label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="twitter" placeholder="Enter Twitter ID " class="k-textbox home_screen_text_medium" ng-model="socialID.twitter_id">
+                </div>
+            </div>
+  
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label"><i class="fa fa-facebook fa-2"></i></label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="fb" placeholder="Enter Facebook ID " class="k-textbox home_screen_text_medium" ng-model="socialID.fb_id">
+                </div>
+            </div>
+            
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label"><i class="fa fa-google-plus fa-2"></i></label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="gplus" placeholder="Enter Google+ ID" class="k-textbox home_screen_text_medium" ng-model="socialID.gplus_id">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-1 col-md-offset-4" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onSaveSocialMedia()">SAVE</a>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>

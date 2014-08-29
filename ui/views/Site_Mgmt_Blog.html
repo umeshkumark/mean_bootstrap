@@ -1,0 +1,75 @@
+<!--
+ * file - Site_Mgmt_Blog.html 
+ * desc - View accessed from the Site Management -> Blog menu.
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+
+<div class="container-fluid" ng-controller="SiteMgmtBlogCtrl">
+    <div class="jumbotron" id="SiteMgmtBlog">
+        <!-- Controls for creating/updating Blog entry-->
+        <div class="row form-group">
+            <div class="col-md-4">
+                <select kendo-combo-box
+                        k-data-text-field="'sectionName'"
+                        k-data-value-field="'_id'"
+                        k-filter="contains"
+                        k-auto-bind="true"
+                        k-min-length="5"
+                        ng-model="selectedSection"
+                        ng-change="onSectionChange(this)"
+                        k-index="1"
+                        k-data-source="sectionList">
+                </select>
+            </div>
+        </div>
+        <!-- Display the Summer Note Editor -->
+        <div class="row">
+            <div class="col-md-12" >
+                <div id="BlogEditor" summer-note-editor editor-height="200" editor-focus="true">
+                </div>
+            </div>
+        </div>
+        <!-- SAVE UPDATE & RESET buttons -->
+        <div class="row">
+            <div class="col-md-1" >
+                <a class="btn btn-primary btn-md" role="button" ng-click="onBlogSave()" ng-disabled="isBlogSave==false">SAVE</a>
+            </div>
+            <div class="col-md-1" >
+                <a class="btn btn-primary btn-md" role="button" ng-click="onBlogReset()">RESET</a>
+            </div>
+            <div class="col-md-1" >
+                <a class="btn btn-primary btn-md" role="button" ng-click="onBlogUpdate()" ng-disabled="isBlogUpdate==false">UPDATE</a>
+            </div>
+        </div>
+        <!-- add a divider -->
+        <div>
+            <hr class="horizontal_divider_one">
+        </div>
+        <!-- Controls for displaying Blogs in a Grid -->
+        <div class="row form-group">
+            <div class="col-md-4">
+                <select kendo-combo-box
+                        k-data-text-field="'sectionName'"
+                        k-data-value-field="'_id'"
+                        k-filter="contains"
+                        k-auto-bind="true"
+                        k-min-length="5"
+                        ng-model="selectedSectionGrid"
+                        ng-change="onSectionChangeGrid(this)"
+                        k-index="1"
+                        k-data-source="sectionList">
+                </select>
+            </div>
+        </div>
+        <!-- Display the Grid -->
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-grid="blogGridOptions" class="mc_grid" style="height:150px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

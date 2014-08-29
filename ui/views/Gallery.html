@@ -1,0 +1,41 @@
+<!--
+ * file - Gallery.html 
+ * desc - View accessed from the Gallery menu.
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+
+<div class="container-fluid" ng-controller="GalleryCtrl" >
+    <div class="jumbotron" id="gallery">
+        <!-- Display album as thumb nails -->
+        <div class="row">
+            <div class="col-md-2" ng-repeat="album in albumList">
+                <span gallery album-id="{{album._id}}">{{album.name}}</span>
+                <!-- Display the 1st image in every album as thumb nail -->
+                <a href="#" class="thumbnail">
+                    <img ng-src="./{{albumImages[0].image_path}}" ng-click="loadAlbumImages(albumImages)">
+                </a>
+            </div>
+        </div>
+        
+        <!-- add a divider -->
+        <div>
+            <hr class="horizontal_divider_one">
+        </div>
+        
+        <!-- Gallery Carousel -->
+        <div class="row">
+            <div id="galleryCarousel">
+                <carousel interval="carouselInterval">
+                    <slide ng-repeat="albumImage in albumImagesList" active="albumImage.active">
+                        <img ng-src="./{{albumImage.image_path}}" id="galleryImageId">
+                        <div class="carousel-caption">
+                            <p>{{albumImage.desc}}</p>
+                        </div>
+                    </slide>
+                </carousel>
+            </div>
+        </div>
+    </div>
+</div>

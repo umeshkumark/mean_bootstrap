@@ -1,0 +1,40 @@
+/*
+ * file - meanbootstrapportal.css 
+ * desc - css file for the mean bootstrap portal
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+*/
+
+.horizontal_divider_one {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.home_screen_text_medium {
+    width:302px;
+}
+.home_screen_text_area_medium {
+    width:302px;
+}
+#navigationDiv {
+    //font-family: 'Special Elite', sans-serif;
+    font-family: 'Cinzel', sans-serif;
+}
+#ngViewDiv {
+    font-family: 'Droid Sans', sans-serif;
+}
+.contact_us_text_medium{
+    font-size: 14px;
+    font-weight: normal;
+}
+.control-label{
+    font-family: 'Inconsolata', sans-serif;
+}
+.ngTopPanel{
+    font-family: 'Inconsolata', sans-serif;
+}
+.carousel-caption{
+    color:black;
+}

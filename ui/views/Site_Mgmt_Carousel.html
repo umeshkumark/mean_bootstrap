@@ -1,0 +1,88 @@
+<!--
+ * file - Site_Mgmt_Carousel.html 
+ * desc - View accessed from the Site Management -> Carousel menu.
+ * author - Umesh Kumar
+ * email - umeshkumark@outlook.com
+ * github - https://github.com/ukbokamalla
+-->
+
+<div class="container-fluid" ng-controller="SiteMgmtCarouselCtrl" >
+    <div class="jumbotron" id="siteMgmtCarousel">
+        <form id="carouselAdd" name="carouselAddForm" class="form-horizontal">
+            <!-- Title -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Carousel Title</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="albumName" placeholder="Enter Title for the Carousel" class="k-textbox home_screen_text_medium" ng-model="carousel.title">
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Carousel Description </label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input type="text" id="albumDesc" placeholder="Enter Description for the Carousel" class="k-textbox home_screen_text_medium" ng-model="carousel.desc">
+                </div>
+            </div>
+            
+            <!-- Upload Carousel Image -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Upload Image</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <input id="carouselImage" type="file" name="carouselImage" onChange="angular.element(this).scope().uploadCarouselImage(this);" class="k-button">
+                </div>
+            </div>
+            
+            <!-- Existing Image Preview -->
+            <div class="row form-group">
+                <!-- label -->
+                <label class="col-md-4 control-label">Image Preview</label>
+                <!-- value-->
+                <div class="col-md-6" >
+                    <img ng-src="{{carousel.imagePath}}" class="img-rounded" height="200px" width="200px" ng-hide="isCarouseUpdate==false">
+                </div>
+            </div>
+            
+            <!-- SAVE & CANCEL buttons -->
+            <div class="row form-group">
+
+                <!-- SAVE -->
+                <div class="col-md-4" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onCarouselSave()" ng-disabled="isCarouselSave==false">SAVE</a>
+                </div>
+                 
+                <!-- SAVE -->
+                <div class="col-md-4" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onCarouselUpdate()" ng-disabled="isCarouseUpdate==false">UPDATE</a>
+                </div>
+
+                
+                <!-- RESET -->
+                <div class="col-md-4" >
+                    <a class="btn btn-primary btn-md" role="button" ng-click="onCarouselReset()">RESET</a>
+                </div>
+
+            </div>
+            
+            <!-- add a divider -->
+            <div>
+                <hr class="horizontal_divider_one">
+            </div>
+            
+            <!-- Display the Grid -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div ng-grid="carouselGridOptions" class="mc_grid" style="height:150px;">
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
