@@ -1,15 +1,15 @@
-Introduction:
+<b>Introduction:</b>
 
 The mean_bootstrap repository is intended to be a bootstrap application for a web site / application using  the MEAN stack.
 It comes built in with 4 screens:Carousel,Blog,Gallery & Contact Us. There is also a Site Management section to add/edit/delete
 contents under these 4 screens.
 
-Pre-Requisites:
+<b>Pre-Requisites:</b>
 
 1) Either install Mongodb or create an account in any 'Database as a Service' providers like mongolab
 2) Install node
 
-Credits:
+<b>Credits:</b>
 
 This mean_bootstrap application uses a no of frameworks/libraries which have been made available for free.
 Without these frameworks/libraries it wouldnt have been possible to create this mean_bootstrap application.
@@ -29,44 +29,47 @@ List of external frameworks/libraries used in mean_bootstrap
 12) expressjs
 13) mongojs
 
-Installation & Deployment:
+<b>Installation & Deployment:</b>
 
 1) Once the code is downloaded & copied to a directory, go the directory & run the following command
 
-npm install
+<i>npm install</i>
 
 It will install expressjs (version 3.2.5) & mongojs (version 0.13.0), node driver for mongodb in a folder called node_modules in the current directory
 
 2) Once the Mongodb is installed or an account is created in any providers, login to mondogb & execute the following commands. This will create the db & Collections required by the mean_bootstrap application 
 
-use meanbootstrap
+<i>use meanbootstrap</i>
 
 The above command will create a db 'meanbootstrap'. This can be verified by running the below command
 
-show dbs
+<i>show dbs</i>
 
-db.createCollection("Admin_Users",{autoIndexId:true})
-db.createCollection("Album",{autoIndexId:true})
-db.createCollection("Album_Images",{autoIndexId:true})
-db.createCollection("Blog",{autoIndexId:true})
-db.createCollection("Carousel",{autoIndexId:true})
-db.createCollection("ContactUs",{autoIndexId:true})
-db.createCollection("Gallery",{autoIndexId:true})
+Run the following command
+
+
+<i>db.createCollection("Admin_Users",{autoIndexId:true}) <br/>
+db.createCollection("Album",{autoIndexId:true}) <br/>
+db.createCollection("Album_Images",{autoIndexId:true}) <br/>
+db.createCollection("Blog",{autoIndexId:true}) <br/>
+db.createCollection("Carousel",{autoIndexId:true}) <br/>
+db.createCollection("ContactUs",{autoIndexId:true}) <br/>
+db.createCollection("Gallery",{autoIndexId:true})</i>
 
 These commands will create collections with a '_id' field that will auto-increment everytime a document is added to the collection
 
 3) Add a default user , who will have the authorizations to change content in the deployed application.
 
-db.Admin_Users.insert({
-	"name" : "super admin",
-    "email" : "superadmin@meanbootstrap.com",
-    "login_id" : "superadmin",
-    "password" : "17c4520f6cfd1ab53d8745e84681eb49",
-    "creationDate" : ISODate("2014-08-24T18:22:11.497Z"),
-    "updationDate" : ISODate("2014-08-24T18:22:11.497Z"),
-    "type" : "superadmin",
-    "status" : "active"
-});
+<i>db.Admin_Users.insert({<br/>
+	"name" : "super admin",<br/>
+    	"email" : "your_e_mail",<br/>
+    	"login_id" : "superadmin",<br/>
+    	"password" : "17c4520f6cfd1ab53d8745e84681eb49",<br/>
+	"creationDate" : ISODate("2014-08-24T18:22:11.497Z"),<br/>
+    	"updationDate" : ISODate("2014-08-24T18:22:11.497Z"),<br/>
+    	"type" : "superadmin",<br/>
+    	"status" : "active"<br/>
+});</i>
 
 The values for the default user is mentioned in the file superadmin.js.For more details refer to the 'Site Administration' section below
 
@@ -93,12 +96,12 @@ values:
 local :  In this case , the mean_bootstrap application will be deployed in servers/desktop that is owned by us or our company
 openshift - In this case the mean_bootstrap application will be deployed in openshift server
 
-See section 'Deploying in PAAS providers' 
+See section 'Deploying in PAAS providers' for more options
 
-Start Node:
+<b>Start Node:</b>
 
 Once the mean_bootstrap application is configured , deployed & the mongodb collections are created successfully start the node server
 
 cd to the directory where the code is deployed & run the following command
 
-node node_server.js
+<i>node node_server.js</i>
