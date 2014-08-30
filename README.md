@@ -105,3 +105,8 @@ Once the mean_bootstrap application is configured , deployed & the mongodb colle
 cd to the directory where the code is deployed & run the following command
 
 <i>node node_server.js</i>
+
+
+Detailed tutorial for using mean_bootstrap can be found in
+
+http://ukbokamalla.blogspot.in/2014/08/a-bootstrap-appliction-for-mean-stack.html
