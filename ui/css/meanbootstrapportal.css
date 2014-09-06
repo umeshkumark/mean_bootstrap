@@ -13,10 +13,10 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .home_screen_text_medium {
-    width:302px;
+    width:75%;
 }
 .home_screen_text_area_medium {
-    width:302px;
+    width:75%;
 }
 #navigationDiv {
     //font-family: 'Special Elite', sans-serif;
@@ -37,4 +37,9 @@
 }
 .carousel-caption{
     color:black;
+}
+#carouselDiv{
+    margin: 0 auto;
+    width: 80%;
+    height: 80%; 
 }
