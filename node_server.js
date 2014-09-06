@@ -60,6 +60,8 @@ function startServer(configData){
         }
         else if (host == 'heroku') {
             console.log('heroku deployment');
+            httpPort = process.env.PORT || staticHttpPort;
+            ip = process.env.IP;
         }
         else {
             // Default
